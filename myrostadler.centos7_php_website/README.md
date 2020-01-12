@@ -17,12 +17,12 @@ Please see `defaults/main.yml` for defaults.
 
 ### Has no default value
 
-- website_install_env_database_name
-- website_install_env_database_user
-- website_install_env_database_password
-- website_install_env_database_root_password
-- website_install_dir_name
-- website_install_repo_ssh_uri
+- install_env_database_name
+- install_env_database_user
+- install_env_database_password
+- install_env_database_root_password
+- install_dir_name
+- install_repo_ssh_uri
 
 
 Dependencies
@@ -39,13 +39,13 @@ Example Playbook
   hosts: all
   become: true
   vars:
-    website_install_env_database_name: fizizzle_dev
-    website_install_env_database_root_password: foo
-    website_install_env_database_user: bar
-    website_install_env_database_password: baz
-    website_install_dir_name: fizizzle
-    website_install_repo_ssh_uri: git@git.example.com:username/repo.git
-    website_install_public_folder: public_html
+    install_env_database_name: fizizzle_dev
+    install_env_database_root_password: foo
+    install_env_database_user: bar
+    install_env_database_password: baz
+    install_dir_name: fizizzle
+    install_repo_ssh_uri: git@git.example.com:username/repo.git
+    install_public_folder: public_html
   tasks:
   - include_role: 
       name: myrostadler.centos7_php_website
