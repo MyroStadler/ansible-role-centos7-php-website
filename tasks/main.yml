@@ -63,7 +63,7 @@
     path: "{{ install_dir }}{{ '/' if install_public_folder else '' }}{{ install_public_folder }}"
     mode: 0755
     recurse: true
-  when: install_public_folder != ''
+  when: install_public_folder | default(false) # [602] Don't compare to empty string
 
 - name: Restart Apache
   service:
